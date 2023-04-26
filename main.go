@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 )
 
@@ -15,8 +16,8 @@ type JsonPayload struct {
 
 func main() {
 	var jsonPayload = JsonPayload{
-		Water: 13,
-		Wind:  8,
+		Water: rand.Intn(100) + 1,
+		Wind:  rand.Intn(100) + 1,
 	}
 
 	jsonByte, err := json.Marshal(jsonPayload)
